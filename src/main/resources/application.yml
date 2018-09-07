@@ -1,0 +1,15 @@
+server:
+  port: 8080
+management:
+  server:
+    port: 9090
+
+spring:
+  data:
+    elasticsearch:
+      cluster-name: cluster-validbio
+      cluster-nodes: localhost:9300
+      repositories:
+        enabled: true
+      properties:
+        transport.tcp.connect_timeout: 60s
