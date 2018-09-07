@@ -7,7 +7,7 @@ management:
 spring:
   data:
     elasticsearch:
-      cluster-name: cluster-validbio
+      cluster-name: cluster-dev
       cluster-nodes: localhost:9300
       repositories:
         enabled: true
