@@ -1,0 +1,10 @@
+{
+   "name": "string",
+   "category": "string",
+   "subcategory": "string",
+   "supplier": "string",
+   "price": "string",
+   "tags": [
+      "string"
+   ]
+}

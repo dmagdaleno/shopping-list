@@ -1,0 +1,90 @@
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 3,
+      "number_of_replicas": 0
+    },
+    "analysis": {
+      "filter": {
+        "autocomplete_filter": {
+          "type": "edge_ngram",
+          "min_gram": 3,
+          "max_gram": 20
+        }
+      },
+      "analyzer": {
+        "autocomplete": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "autocomplete_filter"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "product": {
+      "_all": {
+        "type": "text",
+        "analyzer": "portuguese"
+      },
+      "properties": {
+        "name": {
+          "fields": {
+            "plane": {
+              "type": "keyword"
+            },
+            "autocomplete": {
+              "type": "text",
+              "analyzer": "autocomplete"
+            }
+          },
+          "type": "text",
+          "analyzer": "portuguese"
+        },
+        "category": {
+          "fields": {
+            "plane": {
+              "type": "keyword"
+            }
+          },
+          "type": "text",
+          "analyzer": "portuguese"
+        },
+        "subcategory": {
+          "fields": {
+            "plane": {
+              "type": "keyword"
+            }
+          },
+          "type": "text",
+          "analyzer": "portuguese"
+        },
+        "tags": {
+          "fields": {
+            "plane": {
+              "type": "keyword"
+            }
+          },
+          "type": "string",
+          "index": "analyzed",
+          "analyzer": "portuguese"
+        },
+        "supplier": {
+          "fields": {
+            "plane": {
+              "type": "keyword",
+              "index": "not_analyzed"
+            }
+          },
+          "type": "text"
+        },
+        "price": {
+          "type": "float"
+        }
+      }
+    }
+  }
+}
