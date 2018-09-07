@@ -31,6 +31,9 @@
         "analyzer": "portuguese"
       },
       "properties": {
+        "id": {
+          "type": "keyword"
+        },
         "name": {
           "fields": {
             "plane": {
